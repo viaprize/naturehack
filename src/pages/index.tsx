@@ -15,14 +15,17 @@ export default function Home() {
       <h1 className="text-white text-[30px] z-[12] font-[600]">
         Speak to them all
       </h1>
-      <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        src="/sentient_video.mp4"
-      ></video>
+      <div className="absolute inset-0 w-full h-full">
+        <div className="bg-black w-full h-full absolute z-[6] opacity-10" />
+        <iframe
+          className="absolute inset-0 w-full h-full z-[5]"
+          src="https://www.youtube.com/embed/BHACKCNDMW8?autoplay=1&mute=1&controls=0"
+          title="Your video title"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
       <iframe
         className="z-[11] opacity-80 rounded-md"
         src="https://retune.so/chat/11ede806-4a71-7230-9305-879bdfff47c7/widget?key=11edbf75-310a-4970-a236-45941de73e77"
