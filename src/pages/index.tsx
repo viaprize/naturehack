@@ -15,16 +15,16 @@ export default function Home() {
       <h1 className="text-white text-[30px] z-[12] font-[600]">
         Speak to them all
       </h1>
-      <div className="absolute inset-0 w-full h-full">
+      <div className="fixed inset-0 w-full h-full">
         <div className="bg-black w-full h-full absolute z-[6] opacity-10" />
-        <iframe
-          className="absolute inset-0 w-full h-full z-[5]"
-          src="https://www.youtube.com/embed/BHACKCNDMW8?autoplay=1&mute=1&controls=0"
+        <video
+          className="absolute inset-0 w-full h-full z-[5] object-cover"
+          src="https://taraliver.b-cdn.net/Tara%20River.mp4"
           title="Your video title"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+          autoPlay
+          muted
+          loop
+        ></video>
       </div>
       <iframe
         className="z-[11] opacity-80 rounded-md"
