@@ -73,7 +73,7 @@ export default function Home() {
                 Chat with Morača, the River.
               </h1>
               <iframe
-                className="z-[11] opacity-90 rounded-md"
+                className="z-[11] opacity-90 rounded-md w-[300px] md:w-[600px]"
                 src="https://retune.so/chat/11ede80e-cc16-dcf0-9c30-1136ef551952/widget?key=11edbf75-310a-4970-a236-45941de73e77"
                 width="550"
                 height="700"
