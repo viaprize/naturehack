@@ -107,11 +107,11 @@ export default function Home() {
               </button>
               <div className="flex flex-col w-full text-center gap-10">
                 <h1>
-                  We're creating AI chat bots to educate and rebuild
+                  {` We're creating AI chat bots to educate and rebuild
                   relationships with more-than-human beings, for
                   nature conservation and restoration. By combining
                   live data and the latest research, we aim to monitor
-                  and redirect value towards nature stewardship.
+                  and redirect value towards nature stewardship.`}
                 </h1>
                 <h1>
                   This is a demo. For more information please write{" "}
