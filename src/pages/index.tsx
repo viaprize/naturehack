@@ -1,4 +1,7 @@
+import NextImage from "next/image";
 import { useEffect, useRef } from "react";
+
+import Logo from "../../public/sentient_logo.png";
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -10,28 +13,32 @@ export default function Home() {
   }, []);
   return (
     <main
-      className={`flex min-h-screen relative flex-col items-center justify-between p-24`}
+      className={`flex min-h-screen relative flex-col items-center justify-between px-24`}
     >
-      <h1 className="text-white text-[30px] z-[12] font-[600]">
-        Speak to them all
-      </h1>
-      <div className="absolute inset-0 w-full h-full">
-        <div className="bg-black w-full h-full absolute z-[6] opacity-10" />
-        <iframe
-          className="absolute inset-0 w-full h-full z-[5]"
-          src="https://www.youtube.com/embed/BHACKCNDMW8?autoplay=1&mute=1&controls=0"
-          title="Your video title"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+      <div className="z-[12] flex w-full justify-center">
+        <NextImage alt="logo" src={Logo} width={200} height={200} />
       </div>
-      <iframe
-        className="z-[11] opacity-80 rounded-md"
-        src="https://retune.so/chat/11ede806-4a71-7230-9305-879bdfff47c7/widget?key=11edbf75-310a-4970-a236-45941de73e77"
-        width="550"
-        height="700"
-      />
+
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        src="/sentient_video.mp4"
+      ></video>
+      <div className="flex flex-col z-[12] justify-center align-center items-center">
+        <h1 className="text-white text-[30px] z-[12] font-[600]">
+          Speak to them all
+        </h1>
+
+        <iframe
+          className="z-[11] opacity-90 rounded-md"
+          src="https://retune.so/chat/11ede806-4a71-7230-9305-879bdfff47c7/widget?key=11edbf75-310a-4970-a236-45941de73e77"
+          width="550"
+          height="700"
+        />
+      </div>
       <div className="flex flex-col text-center z-[12] font-[600] text-white gap-5 mt-20">
         <h1>
           {`We're creating AI chat bots to educate and rebuild
