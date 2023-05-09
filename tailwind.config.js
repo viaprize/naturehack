@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        yourfont: ["F37Bergman-regular", "sans-serif"],
+        yourfont: ["F37Bergman-regular", "Helvetica Neue"],
       },
       backgroundImage: {
         "gradient-radial":

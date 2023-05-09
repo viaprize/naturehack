@@ -70,7 +70,7 @@ export default function Home() {
           >
             <div className="flex flex-col items-center">
               <h1 className="text-[20px] text-white font-[600]">
-                Chat with Morača, the River.
+                Chat with Morača, the wild river in Montenegro
               </h1>
               <iframe
                 className="z-[11] opacity-90 rounded-md w-[300px] md:w-[600px]"
