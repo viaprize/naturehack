@@ -11,8 +11,19 @@ export default function Home() {
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.5;
+      videoRef.current
+        .play()
+        .catch((error) =>
+          console.log('Autoplay was blocked. Show a "Play" button.')
+        );
     }
   }, []);
+
+  const handlePlayButtonClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
 
   const modalRef = useRef<HTMLDivElement | null>(null);
 
@@ -44,11 +55,13 @@ export default function Home() {
         <div className="fixed inset-0 w-full h-full">
           <div className="bg-black w-full h-full absolute z-[6] opacity-10" />
           <video
+            ref={videoRef}
             className="absolute inset-0 w-full h-full z-[5] object-cover"
             src="https://taraliver.b-cdn.net/Tara%20River.mp4"
             title="Your video title"
             autoPlay
             muted
+            playsInline
             loop
           ></video>
         </div>
@@ -57,7 +70,7 @@ export default function Home() {
             isClosed ? "hidden" : "flex"
           } w-full justify-center`}
         >
-          <NextImage alt="logo" src={Logo} width={150} height={150} />
+          <NextImage alt="logo" src={Logo} width={120} height={120} />
         </div>
 
         <div
@@ -73,7 +86,7 @@ export default function Home() {
                 Chat with Morača, the wild river in Montenegro
               </h1>
               <iframe
-                className="z-[11] opacity-90 rounded-md w-[300px] md:w-[600px] h-[400px] md:h-[600px]"
+                className="z-[11] opacity-90 rounded-md w-[300px] md:w-[600px] h-[400px] lg:h-[600px]"
                 src="https://retune.so/chat/11ede80e-cc16-dcf0-9c30-1136ef551952/widget?key=11edbf75-310a-4970-a236-45941de73e77"
                 width="550"
                 height="700"
